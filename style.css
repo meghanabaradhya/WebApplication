@@ -1,0 +1,282 @@
+:root {
+    --main-radius: 5px;
+    --main-padding: 20px;
+    --blue: #003366;
+    --dark-blue: #002244;
+    --light-blue: #66B2FF;
+    --white: #ffffff;
+    --gray: #f4f4f9;
+    --orange: #FFA500;
+}
+
+body {
+    text-align: left;
+    font-family: Arial, sans-serif;
+    background-color: var(--gray);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Navigation */
+nav {
+    grid-column: span 12;
+    background-color: var(--blue);
+    padding: var(--main-padding);
+    border-radius: var(--main-radius);
+    text-align: center;
+}
+
+nav span a {
+    color: var(--white);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+nav span a:hover {
+    color: var(--light-blue); /* Hover Effect for Navigation Links */
+}
+
+/* About Section */
+.about {
+    grid-column: span 6; /* Takes up 6 grid columns */
+    background-color: var(--dark-blue);
+    padding: var(--main-padding);
+    border-radius: var(--main-radius);
+    color: var(--white);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Image takes 1 part, text takes 2 parts */
+    gap: 20px; /* Spacing between image and text */
+    align-items: center; /* Vertically align image and text */
+}
+
+.about img {
+    width: 100%; /* Ensure the image is responsive */
+    max-width: 200px; /* Limit the image size */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: var(--main-radius); /* Optional: rounded corners */
+}
+
+.about p {
+    margin: 0;
+    align-self: center; /* Vertically center the paragraph */
+}
+
+
+/* Skills Section */
+.skills {
+    grid-column: span 6;
+    background-color: var(--dark-blue);
+    padding: var(--main-padding);
+    border-radius: var(--main-radius);
+    color: var(--white);
+}
+
+/* Experience Section (Side by Side) */
+.experience::before {
+    content: "Experience";
+    grid-column: span 12;
+    font-size: 24px;
+    color: var(--white);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.experience {
+    grid-column: span 12;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0.25rem;
+    background-color: var(--dark-blue);
+    padding: var(--main-padding);
+    border-radius: var(--main-radius);
+    color: var(--white);
+}
+
+.experience div {
+    background-color: var(--blue);
+    padding: var(--main-padding);
+    border-radius: var(--main-radius);
+}
+
+/* Projects Section (Side by Side) */
+.projects::before {
+    content: "Projects";
+    grid-column: span 12;
+    font-size: 24px;
+    color: var(--white);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.projects {
+    grid-column: span 12; /* This spans the entire width */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for projects */
+    grid-gap: 0.35rem;
+    background-color: var(--dark-blue);
+    padding: var(--main-padding);
+    border-radius: var(--main-radius);
+    color: var(--white);
+}
+
+.projects div {
+    background-color: var(--blue);
+    padding: var(--main-padding);
+    border-radius: var(--main-radius);
+}
+
+/* Responsive Images */
+.projects img {
+    width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: var(--main-radius); /* Add border-radius if needed */
+}
+
+/* Education and Certificates Side by Side */
+.education, .certificates {
+    grid-column: span 6;
+    background-color: var(--dark-blue);
+    padding: var(--main-padding);
+    border-radius: var(--main-radius);
+    color: var(--white);
+}
+
+.education-content {
+    display: grid;
+    grid-template-columns: 1fr; /* Stacking education items vertically */
+    gap: 20px;
+}
+
+.education-item {
+    display: grid;
+    grid-template-columns: 150px auto; /* Image on the left, text on the right */
+    align-items: center;
+    gap: 20px;
+}
+
+.education-item img {
+    border-radius: var(--main-radius);
+    max-width: 120px;
+    max-height: 75px;
+}
+
+.education-text h3 {
+    margin: 0;
+    font-size: 20px;
+    color: var(--orange);
+}
+
+.education-text p {
+    margin: 5px 0;
+}
+
+
+.certificates-content {
+    display: grid;
+    grid-template-columns: 1fr; /* Stacking certificate items vertically */
+    gap: 20px;
+}
+
+.certificate-item {
+    display: grid;
+    grid-template-columns: 150px auto; /* Image on the left, text on the right */
+    align-items: center;
+    gap: 20px;
+}
+
+.certificate-item img {
+    border-radius: var(--main-radius);
+    max-width: 120px;
+    max-height: 75px;
+}
+
+.certificate-text h3 {
+    margin: 0;
+    font-size: 20px;
+    color: var(--orange);
+}
+
+.certificate-text p {
+    margin: 5px 0;
+}
+
+/* Responsive Layout for Smaller Screens */
+@media only screen and (max-width: 768px) {
+    .certificate-item {
+        grid-template-columns: 1fr; /* Stack image and text on top of each other for smaller screens */
+        text-align: center;
+    }
+}
+
+
+/* Blogs and Contact Section */
+.blogs, .contact {
+    grid-column: span 6;
+    background-color: var(--dark-blue);
+    padding: var(--main-padding);
+    border-radius: var(--main-radius);
+    color: var(--white);
+}
+
+/* Footer */
+/* Footer */
+footer {
+    grid-column: span 12;
+    background-color: var(--orange);
+    padding: var(--main-padding);
+    border-radius: var(--main-radius);
+    text-align: center;
+    color: var(--white);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-rows: auto auto; /* 2 rows: one for the text and one for the images */
+    justify-items: center;
+}
+
+.footer-images {
+    display: grid;
+    grid-template-columns: repeat(3, 60px); /* 3 equal-sized columns */
+    grid-gap: 300px; /* Space between images */
+    margin-top: 10px;
+}
+
+.footer-images img {
+    width: 100%; /* Images will fill the grid cells */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-gap: 1rem;
+    }
+
+    .projects {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+    }
+
+    nav {
+        grid-column: span 1;
+    }
+    
+    .about, .skills, .experience div, .projects div, .education, .certificates, .blogs, .contact {
+        grid-column: span 1;
+    }
+}
